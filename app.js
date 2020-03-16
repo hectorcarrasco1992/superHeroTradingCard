@@ -13,7 +13,7 @@ const methodOverride = require('method-override');
 require('./lib/passport');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users/userRoutes');
 
 const app = express();
 require('dotenv').config();
