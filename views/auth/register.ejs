@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %> 
+    <title>Document</title>
+</head>
+<body>
+    <link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
+
+<div class="body-content">
+  <div class="module">
+    <h1>Create an account</h1>
+    <form class="form" action="/api/users/register" method="POST" enctype="multipart/form-data" autocomplete="off">
+      <div class="alert alert-error"></div>
+      <input type="text" placeholder="User Name" name="name" required />
+      <input type="email" placeholder="Email" name="email" required />
+      <input type="password" placeholder="Password" name="password"  required />
+      
+      <div class="avatar"><label>Select your avatar: </label><input type="file" name="avatar" accept="image/*"  /></div>
+      <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+    </form>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
