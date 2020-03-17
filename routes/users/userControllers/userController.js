@@ -2,6 +2,7 @@ const User = require('../models/Users');
 const { validationResult } = require('express-validator');
 const faker = require('faker');
 const bcrypt = require('bcryptjs')
+const passport = require('passport')
 module.exports = {
   register: (req, res, next) => {
     const errors = validationResult(req);
@@ -95,6 +96,10 @@ module.exports = {
       return res.render('auth/register',{errors:req.flash('errors')})
   },
 
-  
+  renderHome: (req,res,)=>{
+      if(req.isAuthenticated()){
+          return res.render('auth/home')
+      }else return res.redirect('/')
+  }
 
 }

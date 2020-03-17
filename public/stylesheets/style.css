@@ -1,8 +1,50 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.myRegisterNav {
+  color: white;
+  padding-left: 20px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.myRegisterNav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
+
+.myRegisterNav a:hover {
+  color: orange;
+}
+
+.myNavGreeting {
+  color: orange;
+  padding: 0 20px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+.myNavGreeting a {
+  color: orange;
+}
+
+.myNavGreeting a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.myNavLogout {
+  color: white;
+  padding-left: 10px;
+}
+
+.myNavLogout a {
+  color: white;
+}
+
+.myNavLogout a:hover {
+  color: orange;
+}
+.nav-category-list {
+  text-decoration: none;
+}
+.nav-category-list:hover {
+  color: red;
+}
+
