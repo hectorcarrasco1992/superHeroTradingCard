@@ -37,6 +37,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(flash())
 
 app.use(
   session({
@@ -52,6 +53,14 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  res.locals.errors = req.flash('error')
+  res.locals.message = req.flash('message')
+
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

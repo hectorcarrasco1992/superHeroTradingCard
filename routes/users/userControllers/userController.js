@@ -89,6 +89,12 @@ module.exports = {
         }
       })
     })
-  }
+  },
+
+  renderRegister: (req,res)=>{
+      return res.render('auth/register',{errors:req.flash('errors')})
+  },
+
+  
 
 }
