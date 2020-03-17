@@ -30,7 +30,7 @@ module.exports = {
                   .status(400)
                   .json({ confirmation: false, message: err });
               } else {
-                //return res.redirect('/');
+                return res.redirect('/api/users/home');
                 next();
               }
             });
