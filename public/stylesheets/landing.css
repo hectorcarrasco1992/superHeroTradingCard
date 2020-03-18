@@ -25,7 +25,7 @@
     color: #00E4FF;
     text-decoration: none;
   }
-  header {
+  .landing-header {
     display: table;
     position: relative;
     width: 100%;
