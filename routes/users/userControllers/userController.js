@@ -106,6 +106,12 @@ module.exports = {
       return res.render('auth/update-profile');
     }
     return res.redirect('/');
+  },
+
+  renderProfile:(req,res)=>{
+    if(req.isAuthenticated()){
+      return res.render('auth/profile')
+    }else return res.redirect('/')
   }
 
 }

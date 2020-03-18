@@ -4,13 +4,23 @@ const passport = require('passport');
 const User = require('./models/Users');
 const flash = require('connect-flash')
 
-const {register,updatePassword,updateProfile,renderRegister,renderHome} = require('./userControllers/userController');
+const {
+    register,
+    updatePassword,
+    updateProfile,
+    renderRegister,
+    renderHome,
+    renderProfile
+
+
+} = require('./userControllers/userController');
 const userValidation = require('./utils/userValidation');
 
 router.get('/register',renderRegister );
 router.post('/register', userValidation,register);
 router.get('/home',renderHome)
 router.put('/update-profile',updateProfile)
+router.get('/profile',renderProfile)
   
   router.get('/login', (req, res) => {
     return res.render('auth/login', { errors: req.flash('errors') });
