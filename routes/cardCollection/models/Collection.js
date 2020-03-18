@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Collection = new Schema({
+const CollectionSchema = new Schema({
     owner:{type:Schema.Types.ObjectId,ref:'User'},
     total:{type:Number,default:0},
     items:[
@@ -16,4 +16,4 @@ const Collection = new Schema({
     
 })
 
-module.exports= mongoose.model('Cart',Collection)
+module.exports= mongoose.model('Collection',CollectionSchema)
