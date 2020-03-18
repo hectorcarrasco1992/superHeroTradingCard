@@ -49,7 +49,6 @@ module.exports = {
           console.log('hello');
           if (name) user.profile.name = name;
           if (email) user.email = email;
-          if (address) user.address = address;
           return user;
         })
         .then(user => {
@@ -100,6 +99,13 @@ module.exports = {
       if(req.isAuthenticated()){
           return res.render('auth/home')
       }else return res.redirect('/')
+  },
+
+  renderUpdateProfile:(req, res) => {
+    if (req.isAuthenticated()) {
+      return res.render('auth/update-profile');
+    }
+    return res.redirect('/');
   }
 
 }

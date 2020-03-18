@@ -10,6 +10,7 @@ const userValidation = require('./utils/userValidation');
 router.get('/register',renderRegister );
 router.post('/register', userValidation,register);
 router.get('/home',renderHome)
+router.put('/update-profile',updateProfile)
   
   router.get('/login', (req, res) => {
     return res.render('auth/login', { errors: req.flash('errors') });
