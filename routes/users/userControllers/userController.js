@@ -57,7 +57,7 @@ module.exports = {
           });
         })
         .catch(err => reject(err));
-    }).catch(err => reject(err));
+    })
   },
 
   updatePassword: (params,id)=>{
@@ -110,7 +110,7 @@ module.exports = {
 
   renderProfile:(req,res)=>{
     if(req.isAuthenticated()){
-      return res.render('auth/profile')
+      return res.render('auth/profile',{User})
     }else return res.redirect('/')
   }
 

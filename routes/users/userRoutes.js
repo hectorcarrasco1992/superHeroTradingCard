@@ -30,8 +30,8 @@ router.get('/profile',renderProfile)
   router.post(
     '/login',
     passport.authenticate('local-login', {
-      successRedirect: '/users/home',
-      failureRedirect: '/users/login',
+      successRedirect: '/api/users/home',
+      failureRedirect: '/',
       failureFlash: true
     })
   );
