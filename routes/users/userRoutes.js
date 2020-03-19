@@ -19,7 +19,16 @@ const userValidation = require('./utils/userValidation');
 router.get('/register',renderRegister );
 router.post('/register', userValidation,register);
 router.get('/home',renderHome)
-router.put('/update-profile',updateProfile)
+router.put('/update-profile',(req, res, next) => {
+  updateProfile(req.body, req.user._id)
+    .then(user => {
+      return res.redirect('/api/users/profile');
+    })
+    .catch(err => {
+      console.log(err);
+      return res.redirect('/api/users/update-profile');
+    });
+});
 router.get('/profile',renderProfile)
   
   router.get('/login', (req, res) => {

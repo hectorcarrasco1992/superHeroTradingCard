@@ -1,5 +1,6 @@
 const fetch = require('node-fetch')
 const async = require('async')
+const
 
 const fetch = require('node-fetch')
 let key = process.env.API_KEY
@@ -38,7 +39,7 @@ module.exports = {
             (category,callback)=>{
                 for(let i = 0;i<24;i++){
                     const product = new Product()
-                    product.category = category._id
+                    product.Collection = collection._id
                     product.name = faker.commerce.productName()
                     product.price = faker.commerce.price()
                     product.image = `/images/products2/${i}.jpg`

@@ -44,7 +44,7 @@ module.exports = {
   updateProfile: (params, id) => {
     const { name, email, address } = params;
     return new Promise((resolve, reject) => {
-      User.findById(id)
+      User.findById({_id:id})
         .then(user => {
           console.log('hello');
           if (name) user.profile.name = name;
