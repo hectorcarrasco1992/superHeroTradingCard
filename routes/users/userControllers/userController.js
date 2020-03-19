@@ -49,6 +49,7 @@ module.exports = {
           console.log('hello');
           if (name) user.profile.name = name;
           if (email) user.email = email;
+          if(address) user.address = address
           return user;
         })
         .then(user => {
@@ -57,7 +58,7 @@ module.exports = {
           });
         })
         .catch(err => reject(err));
-    })
+    }).catch(err => console.log(err));
   },
 
   updatePassword: (params,id)=>{
