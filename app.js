@@ -12,6 +12,7 @@ const passport = require('passport');
 const methodOverride = require('method-override');
 require('./lib/passport');
 
+const adminRouter = require('./routes/admin/adminRoute')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users/userRoutes');
 
@@ -64,7 +65,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-
+app.use('/api/admin',adminRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

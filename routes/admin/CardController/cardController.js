@@ -4,12 +4,40 @@ const fetch = require('node-fetch')
 const Card = require('../Cards/models/Card')
 const Collection = require('../../cardCollection/models/Collection')
 
+const url = `http://superheroapi.com/api/`
+
+
+function hero(id){
+
+    fetch(`${url}${process.env.API_KEY}/${id}`).then((data)=>{
+        return data.json()
+    }).then((data)=>{
+        console.log(data)
+        return data
+    })
+} 
+
+
 module.exports = {
-    addProducts:(req,res,next)=>{
-        const url = `https://superheroapi.com/api/${[process.env.API_KEY]}/`
-        let id = req.params.body
-    req.flash('message','Category Created')
-    return res.redirect('/api/admin/add-card')
+    addCard:(req,res,next)=>{
+        // const data = hero(req.query.charId)
+        hero(req.query.charId)
+
+        // const newCard = new Card()
+
+        // newCard.name = data.name
+        // newCard.image = data.image.url
+        // newCard.description = [data.publisher,data.alignment]
+        // newCard.powerStats = data.powerstats
+        // newCard.save()
+
+        // return res.redirect('/api/admin/add-card')
+        
+    
     },
+
+    addCardRender:(req,res)=>{
+        return res.render('admin/addHero')
+    }
 
 }
