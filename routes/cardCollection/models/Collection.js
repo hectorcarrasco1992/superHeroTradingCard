@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+//Cart
 const CollectionSchema = new Schema({
     owner:{type:Schema.Types.ObjectId,ref:'User'},
     total:{type:Number,default:0},
