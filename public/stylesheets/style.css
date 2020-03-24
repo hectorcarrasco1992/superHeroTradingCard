@@ -1,50 +1,8 @@
-.myRegisterNav {
-  color: white;
-  padding-left: 20px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+  > li {
+    float: none;
+    display: inline-block;
+  }
 }
-
-.myRegisterNav a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-
-.myRegisterNav a:hover {
-  color: orange;
-}
-
-.myNavGreeting {
-  color: orange;
-  padding: 0 20px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-
-.myNavGreeting a {
-  color: orange;
-}
-
-.myNavGreeting a:hover {
-  color: white;
-  text-decoration: none;
-}
-
-.myNavLogout {
-  color: white;
-  padding-left: 10px;
-}
-
-.myNavLogout a {
-  color: white;
-}
-
-.myNavLogout a:hover {
-  color: orange;
-}
-.nav-category-list {
-  text-decoration: none;
-}
-.nav-category-list:hover {
-  color: red;
-}
-

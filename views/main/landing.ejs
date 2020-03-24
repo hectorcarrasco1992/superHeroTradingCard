@@ -4,13 +4,13 @@
    <% include ../partials/head %> 
     <title>Document</title>
 </head>
-<body id="login-body">
+<body class="login-body">
     <header id="header">
         <div class="vert-text">
           <div class="p-img">
           <img src="https://res.cloudinary.com/pashagord/image/upload/v1468545314/Portfolio/logos/codepen_logo.png"/>
       </div>
-                  <h1 id="typer-size">                
+                  <h1 class="login-h1" id="typer-size">                
                       <!-- TEXTS -->
                       <span id="typed"></span>
                       <div id="typed-strings">
@@ -25,7 +25,7 @@
                   <!-- TITLE -->
                   
           
-          <a href="#contacts" class="scroll-down nav-link"></a>
+          <a class="contacts" href="#contacts" class="scroll-down nav-link"></a>
         </div>
       </header class="landing-header">
       <!-- FOOTER  -->
@@ -36,11 +36,11 @@
               <h3 class="zayn">Login/Register to begin</h3>
                       <hr class="style17">
       <!-- 		FORMS		 -->
-                  <form action="/api/users/login" method="POST">
-                    <input name="name" type="text" placeholder="Enter  Name"/><br>
+                  <form class="landing-form" action="/api/users/login" method="POST">
+                    
                     <input name="email" type="text" placeholder="Enter email"/><br>
                     <input name="password" type="text" placeholder="Enter Password"/><br>
-                      <button type="submit">login</button>
+                      <button class="login-btn" type="submit">login</button>
                   </form>
 
                   <a href="api/users/register">Don't have an account? Create one!</a>

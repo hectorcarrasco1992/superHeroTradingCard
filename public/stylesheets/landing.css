@@ -1,4 +1,4 @@
-#login-body {
+.login-body {
     font-family: 'Comfortaa', cursive;
       background: #B24592;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
@@ -14,7 +14,7 @@
     border-bottom: solid 2px rgba(255, 255, 255, 0.125);
     margin-bottom: 20px;
   }
-  a {
+  .contacts {
     color: #33A9B7;
   }
   #typer-size{
@@ -32,26 +32,26 @@
     height: 100vh;
     color: white;
   }
-  header #particles {
+   #particles {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
   }
-  header .vert-text {
+  .vert-text {
     display: table-cell;
     position: relative;
     vertical-align: middle;
     text-align: center;
   }
-  header .vert-text h1 {
+  .vert-text h1 {
     padding: 0;
     margin: 0;
     font-size: 4.5em;
     font-weight: 700;
   }
-  header .vert-text .scroll-down {
+  .vert-text .scroll-down {
     display: block;
     position: absolute;
     bottom: 12%;
@@ -63,10 +63,10 @@
     -o-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
-  header .vert-text .scroll-down:hover {
+   .vert-text .scroll-down:hover {
     opacity: 0.5;
   }
-  header .vert-text .scroll-down::after {
+  .vert-text .scroll-down::after {
     position: absolute;
     content: '';
     width: 16px;
@@ -78,7 +78,7 @@
     transform: rotate(-45deg);
     box-sizing: border-box;
   }
-  header .vert-text .scroll-down::before {
+  .vert-text .scroll-down::before {
     position: absolute;
     top: -22px;
     left: -22px;
@@ -115,7 +115,7 @@
   
   
   
-  form{
+  .landing-form{
       margin-top: 70px;
       width: 100%;
   }
@@ -169,7 +169,7 @@
   }
   
   
-  button{
+  .login-btn{
       border-radius: 100px;
       color: #fff;
       margin-top: 20px;
