@@ -1,9 +1,9 @@
-*{  
+.register-star{  
     margin:0;
     padding:0;
   }
   
-  h1 {
+  .register-h1 {
     font-size: 2em;
     font-family: "Core Sans N W01 35 Light";
     font-weight: normal;
@@ -80,7 +80,7 @@
     background: #037db6;
   }
   
-  body{
+  .register-body{
     color: #fff;
     background-color:#f0f0f0;
     font-family:helvetica;

@@ -1,25 +1,43 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand Logo</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %> 
+    <title>Document</title>
+</head>
+<body class="nav-body">
+    <nav id="nav-3">
+        <a class="link-3" href="#">Home</a>
+        <a class="link-3" href="#">About</a>
+        <a class="link-3" href="#">Contact</a>
+        <a class="link-3" href="#">Shop</a>
+        <% if (!user) { %>
+        <span class="myRegisterNav">
+          <a class="link-3" style="color:white;" href="/api/users/register">Register</a>/<a
+           
+            href="/api/users/login"
+            >Login</a
+          ></span
+        >
+    
+        <% }else{ %>
+        <span style="color:#ee802e" class="myNavGreeting"
+          >Hello &nbsp;<a class="link-3" href="/api/users/profile" 
+            ><%= user.profile.name.toUpperCase() %>
+          </a></span
+        >
+        <span style="margin: 0 10px;background-color:green; border-radius:10px;">
+          <a style="text-decoration:none;height:20px; width: 20px; " href="/api/cart">
+            <i style="font-size:1.2em;color:white;padding-left:10px;" class="fa fa-shopping-cart"></i>
+            <span style="font-size:1.2em;color:white;padding-right:10px;"></span>
+          </a>
+    </span>
+        <span class="myNavLogout"
+          ><a style="color:beige" href="/logout">Logout</a></span
+        >
+        <% } %>
       </div>
+      </nav>
+      
+</body>
+</html>
   
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="pull-left"><a href="#">Dashboard</a></li>
-          <li class="active"><a href="#">Stories</a></li>
-          <li><a href="#">Videos</a></li>
-          <li><a href="#">Photos</a></li>
-          <li class="social pull-right"><a href="#">Social Links</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
