@@ -61,5 +61,55 @@
                 value="Update"
                 />
               </div>
+
+              <hr />
+              <form 
+          action="/api/users/update-password?_method=PUT"
+          role="form"
+          method="POST">
+          
+          <fieldset>
+            <h5>Change Password:</h5>
+              <div class="form-group">
+                <br />
+                <label for="oldPassword">Old Password:</label>
+                <input
+                  type="password"
+                  name="oldPassword"
+                  id="oldPassword"
+                  class="form-control input-lg"
+                  placeholder="Old Password"
+                />
+              </div>
+              <div class="form-group">
+                <br />
+                <label for="newPassword">New Password:</label>
+                <input
+                  type="password"
+                  name="newPassword"
+                  id="newPassword"
+                  class="form-control input-lg"
+                  placeholder="New Password"
+                />
+              </div>
+              <div class="form-group">
+                <br />
+                <label for="repeatNewPassword">Repeat New Password:</label>
+                <input
+                  type="password"
+                  name="repeatNewPassword"
+                  id="repeatNewPassword"
+                  class="form-control input-lg"
+                  placeholder="New Password"
+                />
+              </div>
+          </fieldset>
+
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <input
+              type="submit"
+              class="btn btn-lg btn-success btn-block"
+              value="Update Password"
+            />
 </body>
 </html>
