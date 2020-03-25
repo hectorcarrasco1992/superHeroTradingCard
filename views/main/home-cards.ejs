@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %> 
+    <title>Document</title>
+</head>
+<body>
+    <% include ../partials/nav %> 
+
+    <hr>
+
+    <div id="card-collection">
+  
+    </div> 
+    
+    <!-- Card Structure -->
+    
+      <div class="card-main">
+        <div class="card-image" <%= cards.image %> ></div>
+        <div class="card-info">
+           <h2 class="card-title"><%= cards.name %> </h2>
+          <p class="card-text line-clamp"><%= cards %> </p>
+        </div>
+      </div>
+      <div class="card-actions">
+        <div class="card-buttons">
+          <button class="btn btn-text">Read More</button>
+        </div>
+        <div class="card-icons">
+          <button class="btn btn-icon far fa-heart fa-lg"></button>
+        <button class="btn btn-icon fas fa-share-alt fa-lg"></button>
+        </div>
+        
+      </div>
+    </div> 
+
+    
+</body>
+</html>

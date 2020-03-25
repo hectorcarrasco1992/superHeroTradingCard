@@ -98,5 +98,10 @@ router.get('/profile',renderProfile)
       return res.redirect('/api/users/update-profile')
     })
   })
+
+  router.get('/logout', (req, res) => {
+    req.logout();
+    return res.redirect('/');
+  });
   module.exports = router;
   

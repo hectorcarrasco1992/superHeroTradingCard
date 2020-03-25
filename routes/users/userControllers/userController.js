@@ -3,6 +3,31 @@ const { validationResult } = require('express-validator');
 const faker = require('faker');
 const bcrypt = require('bcryptjs')
 const passport = require('passport')
+const Card = require('../../admin/Cards/models/Card')
+
+function paginate(req,res,next){
+  const perPage = 6
+  const page =req.params.pageNumber
+
+  Card.find()
+  .skip(perPage * (page-1))
+  .limit(perPage)
+  .populate('Pack')
+  .exec((err,cards)=>{
+    if(err) next(err)
+    Card.countDocuments()
+    .exec((err,count)=>{
+      if(err) next(err)
+      res.render('main/home-cards',{
+        cards,
+        pages:Math.ceil(count/perPage),
+        page:Number(page)
+      })
+
+  })
+    
+     
+})}
 module.exports = {
   register: (req, res, next) => {
     const errors = validationResult(req);
@@ -96,9 +121,9 @@ module.exports = {
       return res.render('auth/register',{errors:req.flash('errors')})
   },
 
-  renderHome: (req,res,)=>{
+  renderHome: (req,res,next)=>{
       if(req.isAuthenticated()){
-          return res.render('auth/home')
+          paginate(req,res,next)
       }else return res.redirect('/')
   },
 
