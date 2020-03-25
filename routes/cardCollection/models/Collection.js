@@ -1,19 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-//Cart
-const CollectionSchema = new Schema({
-    owner:{type:Schema.Types.ObjectId,ref:'User'},
-    total:{type:Number,default:0},
-    items:[
-        {
-        item:{type:Schema.Types.ObjectId,ref:'Card'},
-        quantity:{type:Number,default:1},
-        
-    }
-
-    ]
+//Categories
+const PackSchema = new Schema({
+    name:{type:String,trim:true},
+    
+   
 
     
 })
 
-module.exports= mongoose.model('Collection',CollectionSchema)
+module.exports= mongoose.model('Pack',PackSchema)

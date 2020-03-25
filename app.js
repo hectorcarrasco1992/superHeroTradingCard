@@ -10,6 +10,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const methodOverride = require('method-override');
+const getEveryPack = require('./routes/admin/middleware/getCollection')
 require('./lib/passport');
 
 const adminRouter = require('./routes/admin/adminRoute')
@@ -38,6 +39,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(getEveryPack)
 app.use(flash())
 
 app.use(
