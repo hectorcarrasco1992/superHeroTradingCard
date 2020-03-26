@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-
+<h1><%= packName %> </h1>
     
     <canvas id="text" width="500" height="100"></canvas>
 <canvas id="stage" width="500" height="100"></canvas>
-<form id="form" action="/api/admin/add-hero-card">
+<form id="form" action="/api/admin/add-hero-card" method="POST">
+    <input type="hidden" name='packName' value ="<%= packName %> "/>
     <input type="text" name="charId" id="inputText" placeholder="Enter a Number" />
     <input type="submit" value="TRY IT" />
 </form>

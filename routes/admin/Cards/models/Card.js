@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const CardSchema = new Schema({
-    // pack:{type:Schema.Types.ObjectId,ref:'Pack'},
+     pack:{type:Schema.Types.ObjectId,ref:'Pack'},
     charId:{type:Number,unique:true},
     name:String,
     image:String,

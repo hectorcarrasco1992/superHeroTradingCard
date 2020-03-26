@@ -19,35 +19,38 @@ function hero(id){
 
 
 module.exports = {
-    addCard:(req,res,next)=>{
+    addCard:(req,res)=>{
 
        
 
         
-        const id = (req.query.charId)
+        const id = (req.body.charId)
         async.waterfall([
             (callback)=>{
-                Pack.findOne({name:req.params.name},(err,pack)=>{
+                Pack.findOne({name:req.body.packName},(err,pack)=>{
+                    console.log('pack')
                     if(err) return next(err)
                     console.log('Waterfall collection...',pack)
                     callback(null,pack)
                 })
             },
-    
+            
             (pack,callback)=>{
+                console.log('hey')
                   fetch(`${url}${process.env.API_KEY}/${id}`).then((data)=>{
              return data.json()
           }).then((data)=>{
-             console.log(data)
+              
+             console.log('hero data:',data)
              const newCard = new Card()
-              newCard.pack = pack._id
+            newCard.pack = pack._id
              newCard.name = data.name
              newCard.image = data.image.url
         
              newCard.powerStats = data.powerstats
              newCard.save()
 
-             return res.redirect(`/api/admin/add-card/:name`)
+             return res.render(`admin/addHero`,{packName:pack.name})
           })},
             ])
         // const id = req.query.charId
@@ -73,7 +76,7 @@ module.exports = {
     
 
     addCardRender:(req,res)=>{
-        return res.render('admin/addHero')
+        return res.render('admin/addHero',{name:req.params.name})
     },
 
     getAllCards:(req,res,next)=>{
