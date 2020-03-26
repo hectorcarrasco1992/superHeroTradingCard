@@ -14,9 +14,9 @@
     Card Structure -->
      <div class="card-container" style="background-image: url(<%=cards[0].image%>);">
       <div class="card-main">
-        <div class="card-image" style="background-image: url(<%= cards[0].image%>);" ><img src= <%= cards[0].image %> > </div>
+        <div class="card-image" style="background-image: url(<%=cards[0].image%>);" ><h1 style="color: white;"><%= cards[0].name %> </h1> </div>
         <div class="card-info">
-           <h2 class="card-title"><%= cards[0].name %> </h2>
+           <h2 class="card-title">Stats </h2>
           <p class="card-text line-clamp">Intelligence:<%= cards[0].powerStats.intelligence %> </p>
           <p class="card-text line-clamp">Strength:<%= cards[0].powerStats.strength %> </p>
           <p class="card-text line-clamp">Speed:<%= cards[0].powerStats.speed %> </p>

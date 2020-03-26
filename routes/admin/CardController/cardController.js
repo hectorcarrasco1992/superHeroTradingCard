@@ -21,43 +21,35 @@ function hero(id){
 module.exports = {
     addCard:(req,res,next)=>{
 
-       let newCard =  hero(req.query.charId)
-       console.log(newCard)
-       let myHero = new Card()
+       
 
-       myHero.name = newCard.name
-       myHero.image = newCard.image.url
-       myHero.powerStats = newCard.powerStats
-
-       myHero.save()
-
-        return res.redirect('/api/admin/add-card')
-        // const id = (req.query.charId)
-        // async.waterfall([
-        //     (callback)=>{
-        //         Pack.findOne({name:req.params.name},(err,pack)=>{
-        //             if(err) return next(err)
-        //             console.log('Waterfall collection...',pack)
-        //             callback(null,pack)
-        //         })
-        //     },
-    
-        //     (pack,callback)=>{
-        //           fetch(`${url}${process.env.API_KEY}/${id}`).then((data)=>{
-        //      return data.json()
-        //   }).then((data)=>{
-        //      console.log(data)
-        //      const newCard = new Card()
-        //       newCard.pack = pack._id
-        //      newCard.name = data.name
-        //      newCard.image = data.image.url
         
-        //      newCard.powerStats = data.powerstats
-        //      newCard.save()
+        const id = (req.query.charId)
+        async.waterfall([
+            (callback)=>{
+                Pack.findOne({name:req.params.name},(err,pack)=>{
+                    if(err) return next(err)
+                    console.log('Waterfall collection...',pack)
+                    callback(null,pack)
+                })
+            },
+    
+            (pack,callback)=>{
+                  fetch(`${url}${process.env.API_KEY}/${id}`).then((data)=>{
+             return data.json()
+          }).then((data)=>{
+             console.log(data)
+             const newCard = new Card()
+              newCard.pack = pack._id
+             newCard.name = data.name
+             newCard.image = data.image.url
+        
+             newCard.powerStats = data.powerstats
+             newCard.save()
 
-        //      return res.redirect('/api/admin/add-card')
-        //   })},
-        //     ])
+             return res.redirect(`/api/admin/add-card/:name`)
+          })},
+            ])
         // const id = req.query.charId
         //  fetch(`${url}${process.env.API_KEY}/${id}`).then((data)=>{
         //     return data.json()
