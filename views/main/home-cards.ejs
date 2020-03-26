@@ -4,22 +4,26 @@
     <% include ../partials/head %> 
     <title>Document</title>
 </head>
-<body>
+<body class="home-card-body">
     <% include ../partials/nav %> 
-
-    <hr>
 
     <div id="card-collection">
   
     </div> 
     
-    <!-- Card Structure -->
-    
+    Card Structure -->
+     <div class="card-container" style="background-image: url(<%=cards[0].image%>);">
       <div class="card-main">
-        <div class="card-image" <%= cards.image %> ></div>
+        <div class="card-image" style="background-image: url(<%= cards[0].image%>);" ><img src= <%= cards[0].image %> > </div>
         <div class="card-info">
-           <h2 class="card-title"><%= cards.name %> </h2>
-          <p class="card-text line-clamp"><%= cards %> </p>
+           <h2 class="card-title"><%= cards[0].name %> </h2>
+          <p class="card-text line-clamp">Intelligence:<%= cards[0].powerStats.intelligence %> </p>
+          <p class="card-text line-clamp">Strength:<%= cards[0].powerStats.strength %> </p>
+          <p class="card-text line-clamp">Speed:<%= cards[0].powerStats.speed %> </p>
+          <p class="card-text line-clamp">Durability:<%= cards[0].powerStats.durability %> </p>
+          <p class="card-text line-clamp">Power:<%= cards[0].powerStats.power %> </p>
+          <p class="card-text line-clamp">Combat:<%= cards[0].powerStats.combat%> </p>
+         
         </div>
       </div>
       <div class="card-actions">
@@ -32,6 +36,11 @@
         </div>
         
       </div>
+    </div> 
+    Card Structure
+  
+  
+    
     </div> 
 
     
