@@ -6,6 +6,7 @@ const collectionValidation = require('../validation/collectionValidation')
 
 router.post('/add-hero-card/',addCard)
 
+router.get('/pack/:id',getAllCards)
 router.get('/add-card/:name',addCardRender)
 router.get('/add-pack',getAllPack)
 router.post('/create-pack',collectionValidation,createPack)

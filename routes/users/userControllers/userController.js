@@ -9,7 +9,7 @@ function paginate(req,res,next){
   const perPage = 6
   const page =req.params.pageNumber
 
-  Card.find()
+  Card.find({owner:req.user._id})
   .skip(perPage * (page-1))
   .limit(perPage)
   .populate('Pack')

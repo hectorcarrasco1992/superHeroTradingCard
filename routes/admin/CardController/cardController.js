@@ -51,7 +51,7 @@ module.exports = {
              newCard.powerStats = data.powerstats
              newCard.save()
 
-             return res.render(`admin/addHero`,{packName:pack.name})
+             return res.render(`admin/addHero`,{packName:pack.name,data})
           })},
             ])
         // const id = req.query.charId
@@ -81,8 +81,8 @@ module.exports = {
     },
 
     getAllCards:(req,res,next)=>{
-        Card.find({pack:req.params.id})
-        // references the key in the model Product
+        Card.find({owner:req.user._id})
+        // references the key in the model Card
         .populate('Pack')
         // executes and gives back the array
         .exec((err,cards)=>{

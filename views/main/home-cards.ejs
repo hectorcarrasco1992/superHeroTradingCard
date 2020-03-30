@@ -6,8 +6,20 @@
 </head>
 <body class="home-card-body">
     <% include ../partials/nav %> 
-    <% if (cards) { %>
-     <% for( let i = 0; i < cards.length; i++ ) { %>
+
+
+    
+   
+   
+     
+      <div class="pack-list">
+        <h1> Hall of Justice or League of Villains</h1>
+        
+        </div>
+      <% if (cards) { %>
+        <% for( let i = 0; i < cards.length; i++ ) { %>
+
+          <hr> 
      
       <div id="card-collection">
         
@@ -15,7 +27,7 @@
       
       
       <div class="card-container" style="background-image: url(<%=cards[i].image%>);">
-        <div class="card-main">
+        <div class="card-main" >
           <div class="card-image" style="background-image: url(<%=cards[i].image%>);" ><h1 style="color: white;"><%= cards[i].name %> </h1> </div>
           <div class="card-info">
             <h2 class="card-title">Stats </h2>
@@ -25,6 +37,8 @@
             <p class="card-text line-clamp">Durability:<%= cards[i].powerStats.durability %> </p>
             <p class="card-text line-clamp">Power:<%= cards[i].powerStats.power %> </p>
             <p class="card-text line-clamp">Combat:<%= cards[i].powerStats.combat%> </p>
+            <p class="card-text line-clamp">Pack:<%= cards[i].pack%> </p>
+            
             
           </div>
         </div>
@@ -39,13 +53,32 @@
           
         </div>
       </div> 
-      Card Structure
+
+      <div style="display: block;">
+        <ul class="pagination text-center">
+         <% for( let j = 1; j < pages; j++ ) { 
+            if(j===1){%>
+                <li class="my-pagination"><a href="/"><%= j %> </a></li>
+            }<% } else { %>
+                <li class="my-pagination"><a href="/page/<%= j %>"><%= j %> </a></li>
+            <% }%>
+        <% } %>
+        </ul>
+
+    </div>
+      
       
       
       
     </div> 
     <% } %>
+  <% } %> 
+
+  <% if (cards.length === 0) { %>
+    <p>Please click Add a Pack to begin your collection</p>
+   
   <% } %>
+   
     
     
   </body>

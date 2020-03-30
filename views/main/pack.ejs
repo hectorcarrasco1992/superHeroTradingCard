@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View my Packs</title>
+</head>
+<body>
+    <% include ../partials/nav %> 
+    <span class="pack-list">
+        <div class="pack-heros">
+            <ul>
+              <% for( let i = 0; i < cards.length; i++ ) { %>
+                <li 
+                  style="list-style: none;"
+                  >
+                  <a href="/api/admin/pack/<%= pack[i]._id %> ">
+                    <%= cards[i].name %> 
+                  </a> 
+                
+                </li>
+              <% } %>
+          </div>
+          
+    </span>
+    <% for( let i = 0; i < cards.length; i++ ) { %>
+       <div>
+
+           <img src="<%= cards[i].image %> " alt=""> 
+        </div>
+    <% } %> 
+</body>
+</html>
