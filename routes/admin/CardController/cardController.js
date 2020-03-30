@@ -43,7 +43,8 @@ module.exports = {
               
              console.log('hero data:',data)
              const newCard = new Card()
-            newCard.pack = pack._id
+             newCard.pack = pack._id
+             newCard.owner = req.user._id
              newCard.name = data.name
              newCard.image = data.image.url
         
