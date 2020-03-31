@@ -1,6 +1,6 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('../routes/users/models/Users');
+const User = require('./routes/users/models/Users');
 const bcrypt = require('bcryptjs');
 
 // serialize and deserialize

@@ -11,7 +11,7 @@ const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const methodOverride = require('method-override');
 const getEveryPack = require('./routes/admin/middleware/getCollection')
-require('./lib/passport');
+require('./passport');
 
 const adminRouter = require('./routes/admin/adminRoute')
 const indexRouter = require('./routes/index');
