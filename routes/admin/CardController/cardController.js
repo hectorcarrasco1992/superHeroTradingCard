@@ -57,24 +57,7 @@ module.exports = {
              return res.render(`admin/addHero`,{packName:pack.name,data})
           })},
             ])
-        // const id = req.query.charId
-        //  fetch(`${url}${process.env.API_KEY}/${id}`).then((data)=>{
-        //     return data.json()
-        //  }).then((data)=>{
-        //     console.log(data)
-        //     const newCard = new Card()
-            
-        //     newCard.name = data.name
-        //     newCard.image = data.image.url
-        //     newCard.powerStats = data.powerstats
-        //     newCard.save()
-
-        //     console.log(newCard)
         
-        
-    
-        //     return res.redirect('/api/admin/add-card')
-        // }).catch(err=>console.log(err))
     },
         
     
@@ -87,15 +70,7 @@ module.exports = {
     },
 
     getAllCards:(req,res,next)=>{
-        // Card.find({id:req.params.id})
-        // // references the key in the model Card
-        // .populate('Pack')
-        // // executes and gives back the array
-        // .exec((err,cards)=>{
-        //     if(err) return next(err)
-        //     //return res.json({products})
-        //     return res.render('main/pack',{cards})
-        // })
+        
 
         Card.find({name:req.params.name})
         // references the key in the model Card

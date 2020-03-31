@@ -10,15 +10,20 @@ const {
     updateProfile,
     renderRegister,
     renderHome,
-    renderProfile
+    renderProfile,
+    renderUpdatePage,
+    userLogout
 
 
 } = require('./userControllers/userController');
 const userValidation = require('./utils/userValidation');
 
+router.get('/logout', userLogout);
 router.get('/register',renderRegister );
+router.get('/update-profile', renderUpdatePage);
 router.post('/register', userValidation,register);
 router.get('/home',renderHome)
+router.get('/profile',renderProfile)
 router.put('/update-profile',(req, res, next) => {
   updateProfile(req.body, req.user._id)
     .then(user => {
@@ -29,7 +34,6 @@ router.put('/update-profile',(req, res, next) => {
       return res.redirect('/api/users/update-profile');
     });
 });
-router.get('/profile',renderProfile)
   
   router.get('/login', (req, res) => {
     return res.render('auth/login', { errors: req.flash('errors') });
@@ -45,32 +49,9 @@ router.get('/profile',renderProfile)
     })
   );
   
-  //profile routes
-  router.get('/profile', (req, res, next) => {
-    if (req.isAuthenticated()) {
-      return res.render('auth/profile');
-    } else {
-      return res.send('Unauthorized');
-    }
-  });
   
-  // router.put('/update-profile/:id', (req, res, next) => {
-  //   return new Promise((resolve, reject) => {
-  //     User.findById({ _id: req.params.id })
-  //       .then(user => {
-  //         if (req.body.name) user.profile.name = req.body.name;
-  //         if (req.body.email) user.email = req.body.email;
-  //         if (req.body.address) user.address = req.body.address;
-  //         return user;
-  //       })
-  //       .then(user => {
-  //         user.save().then(user => {
-  //           return res.json({ user });
-  //         });
-  //       })
-  //       .catch(err => reject(err));
-  //   }).catch(err => next(err));
-  // });
+  
+  
   router.put('/update-profile', (req, res, next) => {
     updateProfile(req.body, req.user._id)
       .then(user => {
@@ -82,12 +63,6 @@ router.get('/profile',renderProfile)
       });
   });
   
-  router.get('/update-profile', (req, res) => {
-    if (req.isAuthenticated()) {
-      return res.render('auth/update-profile');
-    }
-    return res.redirect('/');
-  });
   
   router.put('/update-password',(req,res)=>{
    updatePassword(req.body,req.user._id)
@@ -99,9 +74,5 @@ router.get('/profile',renderProfile)
     })
   })
 
-  router.get('/logout', (req, res) => {
-    req.logout();
-    return res.redirect('/');
-  });
   module.exports = router;
   

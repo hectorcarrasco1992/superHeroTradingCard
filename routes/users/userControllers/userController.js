@@ -117,6 +117,12 @@ module.exports = {
     })
   },
 
+  renderUpdatePage:(req, res) => {
+    if (req.isAuthenticated()) {
+      return res.render('auth/update-profile');
+    }
+    return res.redirect('/');
+  },
   renderRegister: (req,res)=>{
       return res.render('auth/register',{errors:req.flash('errors')})
   },
@@ -138,6 +144,11 @@ module.exports = {
     if(req.isAuthenticated()){
       return res.render('auth/profile',{User})
     }else return res.redirect('/')
+  },
+
+  userLogout:(req, res) => {
+    req.logout();
+    return res.redirect('/');
   }
 
 }
