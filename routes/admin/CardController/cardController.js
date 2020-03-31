@@ -80,7 +80,10 @@ module.exports = {
     
 
     addCardRender:(req,res)=>{
-        return res.render('admin/addHero',{name:req.params.name})
+        if(req.isAuthenticated()){
+
+            return res.render('admin/addHero',{name:req.params.name})
+        }else res.redirect('/')
     },
 
     getAllCards:(req,res,next)=>{
@@ -108,13 +111,15 @@ module.exports = {
 
     deleteHero: (req,res,next)=>{
         Card.findOneAndDelete({name:req.body.name})
-        .then((cards) =>  res.redirect('/api/users/home')).catch(err=>console.log(err))
+        .then(cards=> res.redirect('/api/admin/delete-hero')).catch(err=>console.log(err))
         next()
     },
 
     renderDelete:(req,res)=>{
         if(req.isAuthenticated()){
             return res.render('main/delete')
+        }else{
+            return res.redirect('/')
         }
     }
 

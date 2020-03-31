@@ -9,11 +9,11 @@
     <% include ../partials/nav %> 
 
 <div class="hero-details" style="width: fit-content;">
-    <h1 style="font-weight: 500;color: hotpink;background-color: black;"> <%= cards[0].name %> </h1>
+    <h1 style="font-weight: 500;color: hotpink;background-color: black; width: fit-content;"> <%= cards[0].name %> </h1>
 
     
     <ul>
-        <li style="color: white;">Full Name : <%= cards[0].biography['full-name'] %> </li>
+        <li  style="color: white; ">Full Name : <%= cards[0].biography['full-name'] %> </li>
         <li style="color: white;">Known Aliases : <%= cards[0].biography.aliases %> </li>
         <li style="color: white;">Place Of Birth : <%= cards[0].biography['place-of-birth']%> </li>
         <li style="color: white;">Publisher : <%= cards[0].biography.publisher %> </li>
