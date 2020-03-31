@@ -8,7 +8,10 @@ const CardSchema = new Schema({
     name:String,
     image:String,
     description:String,
-    powerStats:Object
+    powerStats:Object,
+    biography:Object,
+    firstAppearance:String,
+    publisher:String
 })
 
 module.exports=mongoose.model('Card',CardSchema)

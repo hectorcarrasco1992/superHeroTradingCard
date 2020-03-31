@@ -5,29 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View my Packs</title>
 </head>
-<body>
+<body style="background-image: url(<%=cards[0].image%>);background-repeat: no-repeat; background-size:cover;">
     <% include ../partials/nav %> 
-    <span class="pack-list">
-        <div class="pack-heros">
-            <ul>
-              <% for( let i = 0; i < cards.length; i++ ) { %>
-                <li 
-                  style="list-style: none;"
-                  >
-                  <a href="/api/admin/pack/<%= pack[i]._id %> ">
-                    <%= cards[i].name %> 
-                  </a> 
-                
-                </li>
-              <% } %>
-          </div>
-          
-    </span>
-    <% for( let i = 0; i < cards.length; i++ ) { %>
-       <div>
 
-           <img src="<%= cards[i].image %> " alt=""> 
-        </div>
-    <% } %> 
+<div class="hero-details" style="width: fit-content;">
+    <h1 style="font-weight: 500;color: hotpink;background-color: black;"> <%= cards[0].name %> </h1>
+
+    
+    <ul>
+        <li style="color: white;">Full Name : <%= cards[0].biography['full-name'] %> </li>
+        <li style="color: white;">Known Aliases : <%= cards[0].biography.aliases %> </li>
+        <li style="color: white;">Place Of Birth : <%= cards[0].biography['place-of-birth']%> </li>
+        <li style="color: white;">Publisher : <%= cards[0].biography.publisher %> </li>
+        <li style="color: white;">First Appearance : <%= cards[0].biography['first-appearance'] %> </li>
+        <li style="color: white;">Known Aliases : <%= cards[0].biography.aliases %> </li>
+        
+    </ul>
+
+    <input placeholder="Delete Card" type="submit">
+
+
+</div>
+     
 </body>
 </html>

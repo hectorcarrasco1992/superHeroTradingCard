@@ -47,6 +47,9 @@ module.exports = {
              newCard.owner = req.user._id
              newCard.name = data.name
              newCard.image = data.image.url
+             newCard.biography = data.biography
+             newCard.publisher = data.publisher
+             newCard.firstAppearance= data.firstappearance
         
              newCard.powerStats = data.powerstats
              newCard.save()
@@ -81,15 +84,26 @@ module.exports = {
     },
 
     getAllCards:(req,res,next)=>{
-        Card.find({owner:req.user._id})
+        // Card.find({id:req.params.id})
+        // // references the key in the model Card
+        // .populate('Pack')
+        // // executes and gives back the array
+        // .exec((err,cards)=>{
+        //     if(err) return next(err)
+        //     //return res.json({products})
+        //     return res.render('main/pack',{cards})
+        // })
+
+        Card.find({name:req.params.name})
         // references the key in the model Card
-        .populate('Pack')
+        .then((cards)=>{
+            console.log(cards)
+            
+            res.render('main/pack',{cards})
+        }).catch(err => console.log(err))
         // executes and gives back the array
-        .exec((err,cards)=>{
-            if(err) return next(err)
-            //return res.json({products})
-            return res.render('main/pack',{cards})
-        })
+        
+        
     },
 
 }
