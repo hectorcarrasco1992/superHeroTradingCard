@@ -1,6 +1,9 @@
 {
   "name": "shtradingcard",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.10.x"
+  },
   "private": true,
   "scripts": {
     "dev": "nodemon ./bin/www",
