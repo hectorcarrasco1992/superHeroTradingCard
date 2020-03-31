@@ -111,8 +111,11 @@ module.exports = {
 
     deleteHero: (req,res,next)=>{
         Card.findOneAndDelete({name:req.body.name})
-        .then(cards=> res.redirect('/api/admin/delete-hero')).catch(err=>console.log(err))
-        next()
+        .then(cards =>{
+            return res.render('main/delete')
+            
+           }).catch(err=>console.log(err))
+        
     },
 
     renderDelete:(req,res)=>{

@@ -4,7 +4,10 @@ const Pack = require('../models/Collection')
 module.exports = {
     getAllPack:(req,res,next)=>{
         //return res.json({categories})
-         return res.render('admin/addCollection')
+        if(req.isAuthenticated()){
+
+            return res.render('admin/addCollection')
+        }else res.redirect('/')
          
      },
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <% include ../partials/head %> 
-    <title>Home</title>
+    <title>Document</title>
 </head>
 <body class="home-card-body">
     <% include ../partials/nav %> 
@@ -44,7 +44,7 @@
         </div>
         <div class="card-actions">
           <div class="card-buttons" style="border: yellow 1px solid; border-width: ;">
-            <a style="color: violet;" href="/api/admin/pack/<%= cards[i].name %> ">More info</a>
+            <a style="color: hotpink;" href="/api/admin/pack/<%= cards[i].name %> ">More info</a>
           </div>
           <div class="card-icons">
             <button class="btn btn-icon far fa-heart fa-lg"></button>
@@ -68,7 +68,7 @@
                 <li class="my-pagination"><a href="api/users/home/page/<%= j %>"><%= j %> </a></li>
             <% }%>
         <% } %>
-        </ul>
+            </ul>
 
     </div>
       
@@ -83,6 +83,8 @@
   <% } %>
    
     
-    
+
   </body>
+  
 </html>
+
