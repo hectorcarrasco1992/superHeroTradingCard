@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/addCardForm.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/addPack.css" type="text/css">
     <title>Document</title>
 </head>
 <body>
-
-    
+<% include ../partials/nav %> 
+    <h1 style="color: white;">Pick a number between 1 and 731</h1>
     <canvas id="text" width="500" height="100"></canvas>
 <canvas id="stage" width="500" height="100"></canvas>
 <form id="form" action="/api/admin/add-hero-card" method="POST">
@@ -16,7 +16,6 @@
     <input type="text" name="charId" id="inputText" placeholder="Enter a Number" />
     <input type="submit" value="TRY IT" />
 </form>
-<a href="/api/users/home">home</a>
-   <script></script>
+
 </body>
 </html>

@@ -106,4 +106,16 @@ module.exports = {
         
     },
 
+    deleteHero: (req,res,next)=>{
+        Card.findOneAndDelete({name:req.body.name})
+        .then((cards) =>  res.redirect('/api/users/home')).catch(err=>console.log(err))
+        next()
+    },
+
+    renderDelete:(req,res)=>{
+        if(req.isAuthenticated()){
+            return res.render('main/delete')
+        }
+    }
+
 }
