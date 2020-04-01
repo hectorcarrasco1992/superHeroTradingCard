@@ -54,7 +54,7 @@ module.exports = {
              newCard.powerStats = data.powerstats
              newCard.save()
 
-             return res.render(`admin/addHero`,{packName:pack.name,data},)
+             return res.render(`admin/addHero`,{packName:pack.name,data})
           })},
             ])
         
@@ -87,7 +87,7 @@ module.exports = {
     deleteHero: (req,res,next)=>{
         Card.findOneAndDelete({name:req.body.name})
         .then(cards =>{
-            return res.render('main/delete')
+            return res.render('main/delete',{message:req.flash('deleted')})
             
            }).catch(err=>console.log(err))
         
@@ -95,7 +95,7 @@ module.exports = {
 
     renderDelete:(req,res)=>{
         if(req.isAuthenticated()){
-            return res.render('main/delete')
+            return res.render('main/delete',{message:req.flash('Deleted')})
         }else{
             return res.redirect('/')
         }

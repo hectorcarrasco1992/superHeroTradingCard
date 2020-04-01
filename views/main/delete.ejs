@@ -8,7 +8,8 @@
 </head>
 <body>
     <% include ../partials/nav %> 
-    <h1 class="delete-h1" style="color: red;">Type the name of the poor soul to be damned</h1>
+    <h1 class="delete-h1" style="color: red;">Type the name of the poor soul to be damned(Case Sensitive)</h1>
+   
     <form action="/api/admin/delete-card?_method=DELETE" method="POST">
     <input type="text" name="name" placeholder="Damned Soul">
     <input type="submit">
