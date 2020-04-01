@@ -54,7 +54,7 @@ module.exports = {
              newCard.powerStats = data.powerstats
              newCard.save()
 
-             return res.render(`admin/addHero`,{packName:pack.name,data})
+             return res.render(`admin/addHero`,{packName:pack.name,data},)
           })},
             ])
         
